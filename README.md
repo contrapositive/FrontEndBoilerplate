@@ -1,2 +1,2 @@
-FrontEndBoilerplate
+Front End Boilerplate
 ===================
