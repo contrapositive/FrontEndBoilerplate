@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    $CUSTOM MIXINS
+\*------------------------------------*/
+
+.norm() {
+    margin: 0;
+    padding: 0;
+}
+
+.box(@s : @gutter*2) {
+	width: @s;
+	height: @s;
+	line-height: @s;
+}
+
+.responsive-header(@a: 300, @b: 1120)  {
+	padding-bottom: percentage(@a/@b);	
+	@media screen and (min-width: ~"@{b}px") {
+		padding-bottom: ~"@{a}px" !important;
+	}
+}
+
+.down-triangle(@size, @triangle-color, @background-color) {
+	position: relative;
+	&:before {
+		.rotate(45deg);
+		content: "";
+		position: absolute;
+		left: @size;
+		background: @background-color;
+		bottom: -@size/2;
+		width: @size;
+		height: @size; 
+		border: 1px solid @triangle-color;
+		z-index: 1;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		left: @size - (@size/4);
+		background: @background-color;
+		bottom: 0px;
+		width: @size*1.5; 
+		height: @size*0.7; 
+		z-index: 1;
+	}
+}
+
+.image-fallback(@width, @height, @file) {
+	width: @width;
+	height: @height;
+	display: block;
+	background: url("../img/@{file}.png") no-repeat center center;
+	.background-size(@width @height);
+	html.no-backgroundsize & {
+		background: url("../img/@{file}-ie.png") no-repeat center center;
+	}
+}
