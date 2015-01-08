@@ -64,6 +64,12 @@ object {
 			width: 100%;
 		}
 	}
+	&.pull-right {
+		margin-left: $gutter;
+	}
+	&.pull-left {
+		margin-right: $gutter;
+	}
 	img {
 		width: 100%;
 		height: auto;
