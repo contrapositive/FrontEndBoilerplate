@@ -1,0 +1,47 @@
+
+/*
+	Grid
+*/
+
+$columns: 12;
+
+%row {
+	display: block;
+	margin: 0 (-$gutter*0.5);
+	@include box-sizing(border-box);
+	@extend %clearfix;
+}
+
+.row {
+	@extend %row;
+}
+
+@mixin column($n, $col:$columns, $break:'') {
+	$nth: ($col / $n);
+	@if $break == '' {
+		float: left;
+		width: percentage((1/$col)*$n);
+	    padding: 0 $gutter*0.5;
+	    @include box-sizing(border-box);
+	    @extend %clearfix;
+	    clear: none;
+		@if floor($nth) == $nth {
+			&:nth-child(#{$nth}n + 1) {
+				clear: left; 
+			}
+		}
+	} @else {
+		@media screen and (max-width: $break) {
+			width: percentage((1/$col)*$n);
+			@if floor($nth) == $nth {
+				&:nth-child(#{$nth}n + 1) {
+					clear: none; 
+				}	
+			}
+		}
+	}
+}
+
+@mixin offset($n, $col:$columns) {
+	margin-left: percentage((1/$col)*$n);
+}

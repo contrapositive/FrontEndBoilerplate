@@ -1,0 +1,63 @@
+
+/*
+    Mixins
+*/
+
+@mixin visuallyhidden {
+    position: absolute; 
+  	overflow: hidden; 
+  	clip: rect(0 0 0 0); 
+  	height: 0px; width: 0px; 
+  	margin: -1px; padding: 0; border: 0;
+}
+@mixin centerBottom($width, $height) {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    margin-left: -($width/2);
+}
+@mixin centerAbsolute($width, $height) {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    margin-left: -($width/2);
+    margin-left: -($height/2);
+}
+@mixin norm {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+
+%clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin image-fallback($width, $height, $file) {
+    width: $width;
+    height: $height;
+    display: block;
+    background: url("#{$imageLocation}/#{$file}.png") no-repeat center center;
+    @include background-size($width $height);
+    html.no-backgroundsize & {
+        background: url("#{$imageLocation}/#{$file}-ie.png") no-repeat center center;
+    }
+}
