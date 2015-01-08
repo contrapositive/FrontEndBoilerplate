@@ -3,6 +3,37 @@
 	Tables
 */
 
-table {
+.table-responsive {
+	width: 100%;
+	overflow-y: hidden;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	min-height: .01%;
+	overflow-x: auto;
+	table * {
+		white-space: nowrap;
+	}
+}
 
+table {
+	width: 100%;
+	max-width: 100%;
+	background-color: transparent;
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin-bottom: $gutter;
+	thead {
+		background: rgba(0,0,0,.1);
+	}
+	tr {
+		border-top: 1px solid rgba(0,0,0,.1);
+		td, th {
+			padding: 8px;
+			vertical-align: top;
+			line-height: 1.4em;
+			color: #777;
+			.breakout & {
+				color: $white;
+			}
+		}
+	}
 }

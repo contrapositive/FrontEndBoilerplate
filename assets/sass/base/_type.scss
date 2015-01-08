@@ -3,34 +3,97 @@
 	Type
 */
 
+$heading: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$body: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+%heading {
+	font-family: $heading;
+}
+%body {
+	font-family: $body;
+}
 %fa {
 	font-family: "FontAwesome";
 }
 
 body {
-	
+	@extend %body;
+	font-size: 14px;
+	line-height: 1.4em;
 }
-h1 {
-
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+p, address, blockquote {
+	margin-bottom: $gutter;
+	word-wrap: break-word;
+	small {
+		font-size: 65%;
+		color: $gray;
+	}
 }
-h2 {
-
+%h1 {
+	font-size: 36px;
 }
-h3 {
-
+h1, .h1 {
+	@extend %h1;
 }
-h4 {
-
+%h2 {
+	font-size: 30px;
 }
-h5 {
-
+h2, .h2 {
+	@extend %h2;
 }
-h6 {
-
+%h3 {
+	font-size: 24px;
 }
-p {
-
+h3, .h3 {
+	@extend %h3;
+}
+%h4 {
+	font-size: 18px;
+}
+h4, .h4 {
+	@extend %h4;
+}
+%h5 {
+	font-size: 14px;
+}
+h5, .h5 {
+	@extend %h5;
+}
+%h6 {
+	font-size: 12px;
+}
+h6, .h6 {
+	@extend %h6;
+}
+%p {
+	font-size: 14px;
+}
+p, .p {
+	@extend %p;
+}
+%intro {
+	font-size: 18px;
 }
 .intro {
-	
+	@extend %intro;
+}
+%strong {
+	font-weight: 700;
+}
+strong, .strong {
+	@extend %strong;
+}
+sup, sub, small {
+	font-size: 70%;
+}
+sub {
+	vertical-align: sub;
+}
+sup {
+	vertical-align: super;
+}
+em {
+	font-style: italic;
 }

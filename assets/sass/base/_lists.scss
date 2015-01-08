@@ -3,13 +3,24 @@
 	Lists
 */
 
-ul {
+%list {
+	margin-left: $gutter*2;
+	margin-bottom: $gutter/2;
 	li {
-
+		margin-bottom: $gutter/2;
+		ul, ol {
+			margin-top: $gutter/2;
+		}
 	}
 }
+
+ul {
+	@extend %clearfix;
+	list-style: disc;
+	@extend %list;
+}
 ol {
-	li {
-		
-	}
+	@extend %clearfix;
+	list-style: decimal;
+	@extend %list;
 }

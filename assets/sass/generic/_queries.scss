@@ -3,42 +3,15 @@
     Queries
 */
 
-$mobile: 700px;
-$tablet: 1024px;
-
-// Show JS respond class
-$showJSrespond: true;
-
-// When go-live this should be set to false as we want IE to not respond DR
-$respond: false;
-
 @mixin break($point) {
-  @if ($respond) {
-    @if $point == small {
-        @media screen and (max-width: $mobile) {
-          @content;
-        }
-    }
-    @else if $point == medium {
-        @media screen and (max-width: $tablet) {
-          @content;
-        }
+  @if $point == small {
+    @media screen and (max-width: $mobile) {
+      @content;
     }
   }
-  @else {
-    @if $point == small {
-      @media screen and (max-width: $mobile) {
-        html.respond & {
-          @content;
-        }
-      }
-    }
-    @else if $point == medium {
-      @media screen and (max-width: $tablet) {
-        html.respond & {
-          @content;
-        }
-      }
+  @else if $point == medium {
+    @media screen and (max-width: $tablet) {
+      @content;
     }
   }
 }

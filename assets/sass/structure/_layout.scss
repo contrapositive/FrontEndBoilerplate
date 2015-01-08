@@ -6,3 +6,22 @@
 *, *:before, *:after {
    @include box-sizing(border-box);
 }
+
+html, body {
+	min-width: 320px;
+	&.lt-ie9 {
+		min-width: $fixed-width;
+	}
+}
+
+%container {
+	max-width: $fixed-width;
+	margin: 0px auto;
+	padding: 0px $gutter;
+}
+.container {
+	@extend %container;
+	.lt-ie9 & {
+		width: $fixed-width;
+	}
+}

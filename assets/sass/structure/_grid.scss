@@ -45,3 +45,28 @@ $columns: 12;
 @mixin offset($n, $col:$columns) {
 	margin-left: percentage((1/$col)*$n);
 }
+
+@mixin pull-left($n, $col:$columns, $break:'') {
+	@include column($n, $col, $break);
+	padding: 0 $gutter 0 0;
+	clear: both;
+}
+
+@mixin pull-right($n, $col:$columns, $break:'') {
+	@include column($n, $col, $break);
+	padding: 0 0 0 $gutter;
+	clear: both;
+	float: right;
+}
+
+@for $i from 1 to $columns {
+  .col-#{$i} { @include column($i); }
+  .offset-#{$i} { @include offset($i, $columns); }
+}
+
+*[class^="col-"], *[class^="offset-"] {
+	@include column(4,4,$mobile);
+	@media screen and (max-width: $mobile) {
+		margin: 0 0 $gutter 0;
+	}
+}

@@ -4,11 +4,124 @@
 */
 
 img {
-
+	max-width: 100%;
+}
+img, picture, figure {
+	&.large { // note can also use .col-n to control the size of images
+		@include pull-left(8);
+		@include pull-left(4,4,$mobile);
+		margin-bottom: $gutter;
+	}
+	&.medium {
+		@include pull-left(6);
+		margin-bottom: $gutter;
+	}
+	&.small {
+		@include pull-left(4);
+		margin-bottom: $gutter;
+	}
+}
+figure {
+	img {
+		margin: 0;
+		padding: 0;
+	}
+	figcaption {
+		background: rgba(0,0,0,.1);
+		font-size: 70%;
+		padding: $gutter/2;
+	}
 }
 iframe {
 
 }
+.iframe {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
 object {
 	
+}
+.media { // video with placeholder image and modal player
+	position: relative;
+	overflow: hidden;
+	margin-bottom: $gutter;
+	a {
+		position: static !important;
+		display: block !important;
+	}
+	&.media-medium {
+		width: 50%;
+		@include break(small) {
+			width: 100%;
+		}
+	}
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		position: relative;
+		margin: 0px !important;
+	}
+	&:before {
+		content: '\f04b';
+		@extend %fa;
+		color: $white;
+		position: absolute;
+		font-size: 30px;
+		top: 50%;
+		left: 50%;
+		margin-top: -10px;
+		margin-left: -8px;
+		z-index: 10;
+		display: inline-block;
+		@include transition(padding-top .3s ease-in-out);
+		pointer-events: none;
+	}
+	&:after {
+		content: '';
+		$h: 100px;
+		$w: 100px;
+		height: $h;
+		width: $w;
+		display: block;
+		position: absolute;
+		background: $primary;
+		top: 50%;
+		left: 50%;
+		margin-top: -($h/2);
+		margin-left: -($w/2);
+		@include border-radius($w/2);
+		pointer-events: none;
+		@include break(medium) {
+			$h: 50px;
+			$w: 50px;
+			height: $h;
+			width: $w;
+			top: 50%;
+			left: 50%;
+			margin-top: -($h/2);
+			margin-left: -($w/2);
+			@include border-radius($w/2);
+		}
+		@include break(small) {
+			$h: 100px;
+			$w: 100px;
+			height: $h;
+			width: $w;
+			top: 50%;
+			left: 50%;
+			margin-top: -($h/2);
+			margin-left: -($w/2);
+			@include border-radius($w/2);
+		}
+	}
 }

@@ -27,13 +27,11 @@ $gutter: 					20px;
 $border-radius: 			5px;
 $border: 					4px;
 
-/* Medium */
-$breakpoint-1-max-width: 	48em;
-
-/* Large */
-$breakpoint-2-min-width: 	48em;
-$breakpoint-2-max-width: 	64em;
+$mobile: 					700px;
+$ipad:						768px;
+$tablet:					1024px;
 
 $fixed-width: 				1024px;
 
 $imageLocation: 			"/assets/img";
+$fontLocation: 				"/assets/fonts";

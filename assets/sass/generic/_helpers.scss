@@ -6,3 +6,29 @@
 .hide {
 	@include visuallyhidden();
 }
+
+.pull-right {
+	float: right;
+}
+.pull-left {
+	float: left;
+}
+
+.chromeframe {
+	background: red;
+	color: $white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	line-height: 50px;
+	a {
+		font-weight: bold;
+		color: $white;
+		&:hover {
+			border-bottom-color: $white;
+		}
+	}
+}

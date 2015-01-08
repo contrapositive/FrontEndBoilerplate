@@ -1,6 +1,6 @@
 
 /*
-	Static by @contra-agency
+	@contra-agency
 */
 
 @import "compass";
@@ -10,6 +10,7 @@
 @import "generic/mixins";
 @import "generic/queries";
 @import "generic/helpers";
+@import "structure/grid";
 
 @import "base/type";
 @import "base/links";
@@ -18,9 +19,11 @@
 @import "base/tables";
 @import "base/media";
 
-@import "structure/grid";
 @import "structure/layout";
 @import "structure/header";
 @import "structure/nav";
 @import "structure/main";
 @import "structure/footer";
+
+@import "vendor/magnific-popup";
+@import "vendor/owl-carousel";
