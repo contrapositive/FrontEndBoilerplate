@@ -57,7 +57,7 @@
 		},
 	"\/assets\/js\/vendor\/jRespond.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/vendor\/jRespond.js",
 		"outputAbbreviatedPath": "\/assets\/js\/vendor\/min\/jRespond-min.js",

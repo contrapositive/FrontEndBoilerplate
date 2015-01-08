@@ -1,4 +1,4 @@
-// @codekit-prepend "vendor/jRespond.min.js"
+// @codekit-prepend "vendor/jRespond.js"
 // @codekit-prepend "vendor/jquery.magnific-popup.js"
 // @codekit-prepend "vendor/owl.carousel.js"
 
@@ -37,13 +37,13 @@
 		jRes.addFunc({
 		    breakpoint: 'handheld',
 		    enter: function() {
-		        debugMe('handheld');
+		        
 		    }
 		});
 		jRes.addFunc({
 		    breakpoint: ['desktop','laptop','tablet'],
 		    enter: function() {
-		        debugMe('desktop');
+		        
 		    }
 		});
 
