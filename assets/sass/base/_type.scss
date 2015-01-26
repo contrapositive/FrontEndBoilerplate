@@ -97,3 +97,9 @@ sup {
 em {
 	font-style: italic;
 }
+blockquote {
+	margin-left: $gutter*2;
+	background-color: $gray-lighter;
+	border-left: 4px solid $gray;
+	padding: $gutter $gutter 0px $gutter;
+}

@@ -9,9 +9,16 @@
 
 html, body {
 	min-width: 320px;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 	&.lt-ie9 {
 		min-width: $fixed-width;
 	}
+}
+
+body {
+	overflow-y: scroll; /* has to be scroll, not auto */
+	-webkit-overflow-scrolling: touch;
 }
 
 %container {

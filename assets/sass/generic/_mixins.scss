@@ -51,13 +51,13 @@
     }
 }
 
-@mixin image-fallback($width, $height, $file) {
+@mixin image-fallback($width, $height, $file, $type: 'png') {
     width: $width;
     height: $height;
     display: block;
-    background: url("#{$imageLocation}/#{$file}.png") no-repeat center center;
+    background: url("#{$imageLocation}/#{$file}.#{$type}") no-repeat center center;
     @include background-size($width $height);
     html.no-backgroundsize & {
-        background: url("#{$imageLocation}/#{$file}-ie.png") no-repeat center center;
+        background: url("#{$imageLocation}/#{$file}-ie.#{$type}") no-repeat center center;
     }
 }
